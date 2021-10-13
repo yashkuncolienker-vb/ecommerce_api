@@ -4,3 +4,4 @@ module.exports.categoryRoutes = require('./categoryRoutes');
 module.exports.tagRoutes = require('./tagRoutes');
 module.exports.cartRoutes = require('./cartRoutes');
 module.exports.orderRoutes = require('./orderRoutes');
+module.exports.productRoutes = require('./productRoutes');

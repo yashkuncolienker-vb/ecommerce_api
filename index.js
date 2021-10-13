@@ -8,6 +8,7 @@ const {
   tagRoutes,
   cartRoutes,
   orderRoutes,
+  productRoutes,
 } = require('./routes');
 require('dotenv').config();
 const port = process.env.PORT || 3000;
@@ -19,6 +20,7 @@ app.use('/category', categoryRoutes);
 app.use('/tag', tagRoutes);
 app.use('/cart', cartRoutes);
 app.use('/order', orderRoutes);
+app.use('/product', productRoutes);
 
 app.listen(port, () => {
   mongoose.connect(process.env.DB_URL);
