@@ -1,7 +1,9 @@
-module.exports.roleRoutes = require('./roleRoutes');
-module.exports.userRoutes = require('./userRoutes');
-module.exports.categoryRoutes = require('./categoryRoutes');
-module.exports.tagRoutes = require('./tagRoutes');
-module.exports.cartRoutes = require('./cartRoutes');
-module.exports.orderRoutes = require('./orderRoutes');
-module.exports.productRoutes = require('./productRoutes');
+module.exports = {
+  roleRoutes: require('./roleRoutes'),
+  userRoutes: require('./userRoutes'),
+  categoryRoutes: require('./categoryRoutes'),
+  tagRoutes: require('./tagRoutes'),
+  cartRoutes: require('./cartRoutes'),
+  orderRoutes: require('./orderRoutes'),
+  productRoutes: require('./productRoutes'),
+};

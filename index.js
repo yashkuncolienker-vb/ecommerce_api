@@ -1,26 +1,18 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const {
-  userRoutes,
-  roleRoutes,
-  categoryRoutes,
-  tagRoutes,
-  cartRoutes,
-  orderRoutes,
-  productRoutes,
-} = require('./routes');
-require('dotenv').config();
+const routes = require('./routes');
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use('/user', userRoutes);
-app.use('/role', roleRoutes);
-app.use('/category', categoryRoutes);
-app.use('/tag', tagRoutes);
-app.use('/cart', cartRoutes);
-app.use('/order', orderRoutes);
-app.use('/product', productRoutes);
+app.use('/user', routes.userRoutes);
+app.use('/role', routes.roleRoutes);
+app.use('/category', routes.categoryRoutes);
+app.use('/tag', routes.tagRoutes);
+app.use('/cart', routes.cartRoutes);
+app.use('/order', routes.orderRoutes);
+app.use('/product', routes.productRoutes);
 
 app.listen(port, () => {
   mongoose.connect(process.env.DB_URL);
