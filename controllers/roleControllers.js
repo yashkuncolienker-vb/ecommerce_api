@@ -11,7 +11,7 @@ module.exports.createRole = async (req, res) => {
 
 module.exports.getRole = async (req, res) => {
   try {
-    const role = await Role.find(req.body);
+    const role = await Role.find(req.query);
     res.status(200).send(role);
   } catch (e) {
     res.status(400).send(e.message);
@@ -33,7 +33,7 @@ module.exports.updateRole = async (req, res) => {
 module.exports.deleteRole = async (req, res) => {
   try {
     const role = await Role.findByIdAndDelete(req.params.id);
-    res.status(200).send(role);
+    res.status(200).send('Deleted Role');
   } catch (e) {
     res.status(400).send(e.message);
   }

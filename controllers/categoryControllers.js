@@ -11,7 +11,7 @@ module.exports.createCategory = async (req, res) => {
 
 module.exports.getCategory = async (req, res) => {
   try {
-    const category = await Category.find(req.body);
+    const category = await Category.find(req.query);
     res.status(200).send(category);
   } catch (e) {
     res.status(400).send(e.message);
@@ -33,7 +33,7 @@ module.exports.updateCategory = async (req, res) => {
 module.exports.deleteCategory = async (req, res) => {
   try {
     const category = await Category.findByIdAndDelete(req.params.id);
-    res.status(200).send(category);
+    res.status(200).send('Deleted category');
   } catch (e) {
     res.status(400).send(e.message);
   }

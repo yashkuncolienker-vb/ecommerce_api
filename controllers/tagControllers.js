@@ -11,7 +11,7 @@ module.exports.createTag = async (req, res) => {
 
 module.exports.getTag = async (req, res) => {
   try {
-    const tag = await Tag.find(req.body);
+    const tag = await Tag.find(req.query);
     res.status(200).send(tag);
   } catch (e) {
     res.status(400).send(e.message);
@@ -33,7 +33,7 @@ module.exports.updateTag = async (req, res) => {
 module.exports.deleteTag = async (req, res) => {
   try {
     const tag = await Tag.findByIdAndDelete(req.params.id);
-    res.status(200).send(tag);
+    res.status(200).send('Deleted tag');
   } catch (e) {
     res.status(400).send(e.message);
   }
